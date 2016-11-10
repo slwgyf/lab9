@@ -207,13 +207,15 @@ void Signal::menu ()
 			case 1:
 				cout << "Choose a value to offset by: ";
 				cin >> op;
-				operator+(op);
+				//operator+(op);
+				*this+op;
 				cout << "\nSignal has been offset" << endl;
 				break;
 			case 2:
 				cout << "Choose a value to scale by: ";
 				cin >> op;
-				operator*(op);
+				//operator*(op);
+				*this*op;
 				cout << "\nSignal has been scaled" << endl;
 				break;
 			case 3:
@@ -322,9 +324,12 @@ int main(int argc, char* argv[])
 	int c, num;
 	string name;
 	//this part demonstrates how the non member operator works
+	cout << "------------------------demonstrates non-member operator---------------------------------"<< endl;
 	Signal sig2(1), sig3(1), sig4;
 	sig4 = sig2 + sig3;
 	sig4.sigInfo();
+	
+	cout << "-------------------------demonstrates member operator---------------------------------"<< endl;
 	
 	//this demonstrates how the member operator works
 	if (argc == 1)//if there are no command line arguements
