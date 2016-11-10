@@ -53,7 +53,7 @@ Signal::Signal()//default constructors
 }
 Signal::Signal(int num)//contructor to be called if an integer is sent
 {
-	cout<< "in constructor" << endl;
+	
 	FILE *fp;
 	char fname[16] = "Raw_data_nn.txt";//default name of files, nn to be over written below
 	fname[9] = (num/10)+48;//loads first digit of num into nn
@@ -154,7 +154,7 @@ void Signal::statistics()
 		mean += data[i];
 	}
 	mean = (mean / data.size());	
-	cout << data.size()<<endl;
+	
 	
 }
 
@@ -269,7 +269,7 @@ void Signal::setData (vector<double> stuff)
 void Signal:: setMax (double max)
 {
 	maxV = max;
-	cout << "max:"<< maxV << endl;
+	
 }
 
 //---------------------------------------------Non-Member Operator----------------------------------------------------
@@ -304,7 +304,7 @@ Signal operator+(Signal sig1, Signal sig2)
 	else 
 		max3 = max2;
 	
-	cout << max3<< endl;
+
 	sig3.setData (data3);
 	sig3.statistics();
 	sig3.setMax (max3);
